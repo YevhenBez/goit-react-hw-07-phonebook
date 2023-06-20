@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './css/contactListElement.module.css';
 import { useDispatch } from 'react-redux';
-import { deleteContacts } from '../../redux/contactsSlice';
+import { deleteContacts } from '../../redux/operations';
 
 function ContactListElement({ id, name, number }) {
   const dispatch = useDispatch();
