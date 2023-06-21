@@ -12,7 +12,9 @@ const ContactForm = () => {
   console.log(contacts);
   const dispatch = useDispatch();
 
-  useEffect(() => { dispatch(fetchContacts()); }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const addContact = (name, number) => {
     if (
@@ -24,7 +26,6 @@ const ContactForm = () => {
     } else if (contacts.find(contact => contact.number === number)) {
       alert(`${number} is already in contacts.`);
     } else {
-
       const contact = { name, number };
       dispatch(addContacts(contact));
     }

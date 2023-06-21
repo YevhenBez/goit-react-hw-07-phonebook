@@ -7,8 +7,8 @@ import { selectIsLoading } from '../redux/selectors';
 
 const App = () => {
   const isLoadingApp = useSelector(selectIsLoading);
-  
-  console.log(`Проверка isLoading ${ isLoadingApp }`)
+
+  console.log(`Проверка isLoading ${isLoadingApp}`);
 
   return (
     <div
@@ -27,7 +27,7 @@ const App = () => {
         <ContactForm />
         <h2>Contacts</h2>
         <Filter />
-        {isLoadingApp && (<Loader />)}
+        {isLoadingApp && <Loader />}
         <ContactList />
       </div>
     </div>
