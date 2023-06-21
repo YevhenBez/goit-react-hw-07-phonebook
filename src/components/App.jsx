@@ -1,8 +1,15 @@
 import ContactForm from './contactForm/ContactForm';
 import ContactList from './contactList/ContactList';
 import Filter from './Filter/Filter';
+import Loader from './loader/Loader';
+import { useSelector } from 'react-redux';
+import { selectIsLoading } from '../redux/selectors';
 
 const App = () => {
+  const isLoadingApp = useSelector(selectIsLoading);
+  
+  console.log(`Проверка isLoading ${ isLoadingApp }`)
+
   return (
     <div
       style={{
@@ -20,6 +27,7 @@ const App = () => {
         <ContactForm />
         <h2>Contacts</h2>
         <Filter />
+        {isLoadingApp && (<Loader />)}
         <ContactList />
       </div>
     </div>
